@@ -737,13 +737,17 @@
         <h1 class="slide-title compact">Lecture des articles, la prévoyance et l'accident du travail en tête</h1>
 
         <style>
-          .articles-table { width:100%; border-collapse:collapse; font-size:13px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,0.04); }
-          .articles-table thead th { background:var(--ay-dark); color:#fff; text-align:left; padding:10px 12px; font-weight:600; font-size:11.5px; text-transform:uppercase; letter-spacing:0.4px; }
+          .articles-table { width:100%; border-collapse:collapse; font-size:12.5px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,0.04); }
+          .articles-table thead th { background:var(--ay-dark); color:#fff; text-align:left; padding:10px 14px; font-weight:600; font-size:11px; text-transform:uppercase; letter-spacing:0.3px; }
           .articles-table thead th.num { text-align:right; }
-          .articles-table tbody td { padding:9px 12px; border-bottom:1px solid #f1f5f9; color:var(--ay-text); }
+          .articles-table tbody td { padding:7px 14px; border-bottom:1px solid #f1f5f9; color:var(--ay-text); }
           .articles-table tbody td.num { text-align:right; font-variant-numeric:tabular-nums; font-weight:600; }
-          .articles-table tbody td.title { max-width:340px; }
-          .heat-cell { text-align:right; font-variant-numeric:tabular-nums; font-weight:600; padding-right:12px; }
+          .articles-table tbody td.title { max-width:400px; white-space:nowrap; }
+          .read-cell { display:flex; align-items:center; gap:9px; }
+          .read-bar { position:relative; flex:0 0 90px; height:14px; border-radius:7px; background:#eef2f7; overflow:hidden; }
+          .read-fill { position:absolute; left:0; top:0; bottom:0; border-radius:7px; }
+          .read-pct { font-weight:700; font-variant-numeric:tabular-nums; width:38px; }
+          .read-times { font-variant-numeric:tabular-nums; font-size:11.5px; color:var(--ay-gray); white-space:nowrap; }
         </style>
 
         <table class="articles-table">
@@ -752,82 +756,72 @@
               <th>Titre</th>
               <th class="num">Vues</th>
               <th class="num">Clics SEO</th>
-              <th class="num">Temps moy</th>
-              <th class="num">Scroll 50 %</th>
+              <th>Temps de lecture (passé / nécessaire)</th>
               <th class="num">Scroll 90 %</th>
-              <th class="num">Score</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td class="title">Comprendre la subrogation des IJ de prévoyance en 3 minutes</td>
-              <td class="num">431</td><td class="num">387</td><td class="num">02:04</td>
-              <td class="heat-cell" style="background:rgba(167,123,217,0.38);">37,6 %</td>
-              <td class="heat-cell" style="background:rgba(232,197,71,0.08);">2,3 %</td>
-              <td class="heat-cell" style="background:rgba(10,179,140,0.18);">19,3 %</td>
+              <td class="num">431</td><td class="num">387</td>
+              <td><div class="read-cell"><span class="read-bar"><span class="read-fill" style="width:32%;background:var(--ay-primary);"></span></span><span class="read-pct" style="color:var(--ay-text);">32 %</span><span class="read-times">2:04 / 6:33</span></div></td>
+              <td class="num">2,3 %</td>
             </tr>
             <tr>
               <td class="title">Déclaration AT tardive : conséquences pour l'employeur</td>
-              <td class="num">317</td><td class="num">295</td><td class="num">02:34</td>
-              <td class="heat-cell" style="background:rgba(167,123,217,0.35);">35,3 %</td>
-              <td class="heat-cell" style="background:rgba(232,197,71,0.08);">2,2 %</td>
-              <td class="heat-cell" style="background:rgba(10,179,140,0.15);">16,3 %</td>
+              <td class="num">317</td><td class="num">295</td>
+              <td><div class="read-cell"><span class="read-bar"><span class="read-fill" style="width:22%;background:var(--ay-primary);"></span></span><span class="read-pct" style="color:var(--ay-text);">22 %</span><span class="read-times">2:34 / 11:45</span></div></td>
+              <td class="num">2,2 %</td>
             </tr>
             <tr>
               <td class="title">Déclaration d'accident du travail : 10 erreurs à éviter</td>
-              <td class="num">241</td><td class="num">203</td><td class="num">01:35</td>
-              <td class="heat-cell" style="background:rgba(167,123,217,0.37);">37,3 %</td>
-              <td class="heat-cell" style="background:rgba(232,197,71,0.06);">1,7 %</td>
-              <td class="heat-cell" style="background:rgba(10,179,140,0.16);">17,1 %</td>
+              <td class="num">241</td><td class="num">203</td>
+              <td><div class="read-cell"><span class="read-bar"><span class="read-fill" style="width:26%;background:var(--ay-primary);"></span></span><span class="read-pct" style="color:var(--ay-text);">26 %</span><span class="read-times">1:35 / 6:04</span></div></td>
+              <td class="num">1,7 %</td>
             </tr>
             <tr>
               <td class="title">18e Baromètre de l'Absentéisme : chiffres clés 2026</td>
-              <td class="num">129</td><td class="num">68</td><td class="num">01:07</td>
-              <td class="heat-cell" style="background:rgba(167,123,217,0.32);">31,8 %</td>
-              <td class="heat-cell" style="background:rgba(232,197,71,0.44);">13,2 %</td>
-              <td class="heat-cell" style="background:rgba(10,179,140,0.22);">23,8 %</td>
+              <td class="num">129</td><td class="num">68</td>
+              <td><div class="read-cell"><span class="read-bar"><span class="read-fill" style="width:81%;background:var(--ay-primary);"></span></span><span class="read-pct" style="color:var(--ay-text);">81 %</span><span class="read-times">1:07 / 1:23</span></div></td>
+              <td class="num">13,2 %</td>
             </tr>
             <tr>
               <td class="title">Réduisez vos coûts RH : charges sociales et cotisations AT/MP</td>
-              <td class="num">103</td><td class="num">0</td><td class="num">01:35</td>
-              <td class="heat-cell" style="background:rgba(167,123,217,0.29);">29,1 %</td>
-              <td class="heat-cell" style="background:rgba(232,197,71,0.10);">2,9 %</td>
-              <td class="heat-cell" style="background:rgba(10,179,140,0.14);">14,8 %</td>
+              <td class="num">103</td><td class="num">0</td>
+              <td><div class="read-cell"><span class="read-bar"><span class="read-fill" style="width:56%;background:var(--ay-primary);"></span></span><span class="read-pct" style="color:var(--ay-text);">56 %</span><span class="read-times">1:35 / 2:51</span></div></td>
+              <td class="num">2,9 %</td>
             </tr>
             <tr>
               <td class="title">CIR : décision du Conseil d'État pour les PME</td>
-              <td class="num">99</td><td class="num">11</td><td class="num">02:20</td>
-              <td class="heat-cell" style="background:rgba(167,123,217,0.32);">32,3 %</td>
-              <td class="heat-cell" style="background:rgba(232,197,71,0.13);">4,0 %</td>
-              <td class="heat-cell" style="background:rgba(10,179,140,0.18);">19,4 %</td>
+              <td class="num">99</td><td class="num">11</td>
+              <td><div class="read-cell"><span class="read-bar"><span class="read-fill" style="width:37%;background:var(--ay-primary);"></span></span><span class="read-pct" style="color:var(--ay-text);">37 %</span><span class="read-times">2:20 / 6:17</span></div></td>
+              <td class="num">4,0 %</td>
             </tr>
             <tr>
               <td class="title">Subrogation des IJSS : employeurs, soyez vigilants</td>
-              <td class="num">86</td><td class="num">56</td><td class="num">02:02</td>
-              <td class="heat-cell" style="background:rgba(167,123,217,0.48);">59,3 %</td>
-              <td class="heat-cell" style="background:rgba(232,197,71,0.19);">5,8 %</td>
-              <td class="heat-cell" style="background:rgba(10,179,140,0.25);">27,0 %</td>
+              <td class="num">86</td><td class="num">56</td>
+              <td><div class="read-cell"><span class="read-bar"><span class="read-fill" style="width:49%;background:var(--ay-primary);"></span></span><span class="read-pct" style="color:var(--ay-text);">49 %</span><span class="read-times">2:02 / 4:10</span></div></td>
+              <td class="num">5,8 %</td>
             </tr>
             <tr>
               <td class="title">Processus RH : déléguer les tâches chronophages</td>
-              <td class="num">84</td><td class="num">0</td><td class="num">02:57</td>
-              <td class="heat-cell" style="background:rgba(167,123,217,0.23);">22,6 %</td>
-              <td class="heat-cell" style="background:rgba(232,197,71,0.35);">10,7 %</td>
-              <td class="heat-cell" style="background:rgba(10,179,140,0.21);">22,2 %</td>
+              <td class="num">84</td><td class="num">0</td>
+              <td><div class="read-cell"><span class="read-bar"><span class="read-fill" style="width:82%;background:var(--ay-primary);"></span></span><span class="read-pct" style="color:var(--ay-text);">82 %</span><span class="read-times">2:57 / 3:36</span></div></td>
+              <td class="num">10,7 %</td>
             </tr>
           </tbody>
         </table>
 
-        <p class="footnote" style="margin-top: 8px;">Articles à plus de 60 vues sur le mois. Plus la couleur est intense, plus la lecture est profonde.</p>
+        <p class="footnote" style="margin-top: 8px;">Articles à plus de 60 vues sur le mois. La barre donne la part du temps de lecture réellement passée sur la page, le temps moyen rapporté au temps qu'exige le texte. Le Scroll 90 % mesure autre chose, la part des visiteurs descendus jusqu'en bas de page. Les deux divergent sur les pages longues ou très illustrées.</p>
 
         <div class="insight-callouts" style="grid-template-columns: 1fr 1fr; margin-top: 6px;">
           <div class="insight-card warning">
-            <h4>La fin des articles est rarement atteinte</h4>
-            <p>2 à 3 lecteurs sur 100 dépassent 90 % de la page. L'exception : le Baromètre chiffres clés, à 13 %.</p>
+            <h4>Les longs piliers SEO se survolent</h4>
+            <p>Subrogation et accident du travail, les plus consultés, ne captent que 22 à 37 % du temps qu'exige leur lecture, et 2 % à peine descendent jusqu'en bas de page. Beaucoup de trafic, peu de lecture réelle.</p>
           </div>
           <div class="insight-card">
-            <h4>Deux moteurs, le SEO et les campagnes</h4>
-            <p>Subrogation et accident du travail vivent du SEO (200 à 390 clics). Le Baromètre chiffres clés, les charges sociales et le processus RH n'ont quasi aucun clic SEO, ils sont poussés par l'email et le social.</p>
+            <h4>« en 3 minutes » en promet trois, en exige six</h4>
+            <p>L'article le plus consulté annonce 3 minutes mais en demande plus de 6. Les lecteurs y passent 2 minutes et repartent. Mieux vaut tenir la promesse avec un résumé « l'essentiel en 3 minutes » en tête d'article que rallonger le titre.</p>
           </div>
         </div>
       </div>
@@ -865,7 +859,7 @@
           </div>
 
           <div>
-            <h3>Évolution mensuelle · Jan→Juin</h3>
+            <h3>Toutes IA cumulées · Jan→Juin</h3>
             <div class="month-trend" style="grid-template-columns:repeat(3,1fr);">
               <div class="month-cell"><div class="m-label">Janvier</div><div class="m-val">128 sess.</div><div style="font-size:11px;color:var(--ay-gray);">18 conv.</div></div>
               <div class="month-cell"><div class="m-label">Février</div><div class="m-val">127 sess.</div><div style="font-size:11px;color:var(--ay-gray);">7 conv.</div></div>
